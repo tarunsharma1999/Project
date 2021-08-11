@@ -13,7 +13,7 @@ namespace PensionerDetail
 
         public string PanNo { get; set; }
 
-        public double AadharNo { get; set; }
+        public double AadharNumber { get; set; }
 
         public double SalaryEarned { get; set; }
 

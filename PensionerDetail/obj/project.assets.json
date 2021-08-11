@@ -142,11 +142,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\PensionerDetail\\PensionerDetail.csproj",
+      "projectUniqueName": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Project\\PensionerDetail\\PensionerDetail.csproj",
       "projectName": "PensionerDetail",
-      "projectPath": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\PensionerDetail\\PensionerDetail.csproj",
+      "projectPath": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Project\\PensionerDetail\\PensionerDetail.csproj",
       "packagesPath": "C:\\Users\\Tarun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\PensionerDetail\\obj\\",
+      "outputPath": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Project\\PensionerDetail\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tarun\\AppData\\Roaming\\NuGet\\NuGet.Config",

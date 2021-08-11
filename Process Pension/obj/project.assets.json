@@ -322,11 +322,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Process Pension\\Process Pension.csproj",
+      "projectUniqueName": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Project\\Process Pension\\Process Pension.csproj",
       "projectName": "Process Pension",
-      "projectPath": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Process Pension\\Process Pension.csproj",
+      "projectPath": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Project\\Process Pension\\Process Pension.csproj",
       "packagesPath": "C:\\Users\\Tarun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Process Pension\\obj\\",
+      "outputPath": "C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Project\\Process Pension\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tarun\\AppData\\Roaming\\NuGet\\NuGet.Config",

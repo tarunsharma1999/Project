@@ -29,7 +29,7 @@ namespace PensionerDetail
                                         Name = csvTable.Rows[i][1].ToString().Trim(),
                                         DateOfBirth = DateTime.ParseExact(csvTable.Rows[i][2].ToString().Trim(), "dd-MM-yyyy", CultureInfo.InvariantCulture),
                                         PanNo = csvTable.Rows[i][3].ToString().Trim(),
-                                        AadharNo = Convert.ToDouble(csvTable.Rows[i][4].ToString().Trim().Replace(" ", "")),
+                                        AadharNumber = Convert.ToDouble(csvTable.Rows[i][4].ToString().Trim().Replace(" ", "")),
                                         SalaryEarned = Convert.ToDouble(csvTable.Rows[i][5].ToString().Trim()),
                                         Allowance = Convert.ToDouble(csvTable.Rows[i][6].ToString().Trim()),
                                         BankAccountType = csvTable.Rows[i][7].ToString().Trim(),

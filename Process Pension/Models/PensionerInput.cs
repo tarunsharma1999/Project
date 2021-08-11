@@ -13,7 +13,7 @@ namespace Process_Pension.Models
 
         public string PanNo { get; set; }
 
-        public double AadharNo { get; set; }
+        public double AadharNumber { get; set; }
         public string BankAccountType { get; set; }
 
     }

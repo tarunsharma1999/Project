@@ -20,7 +20,7 @@ namespace PensionerDetail.Controllers
             PensionerDetailModel validUser=null;
             foreach (var detail in userDetails)
             {
-                if(detail.AadharNo == aadharNumber)
+                if(detail.AadharNumber == aadharNumber)
                 {
                     validUser = detail;
                 }

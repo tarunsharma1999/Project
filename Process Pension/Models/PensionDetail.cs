@@ -12,13 +12,12 @@ namespace Process_Pension.Models
         public DateTime DateOfBirth { get; set; }
 
         public string PanNo { get; set; }
+        public double AadharNumber { get; set; }
         public string BankAccountType { get; set; }
         public double SalaryEarned { get; set; }
 
         public double Allowance { get; set; }
         public string BankType { get; set; }
 
-
-        public double PensionAmount { get; set; }
     }
 }
