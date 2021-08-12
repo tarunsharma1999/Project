@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Process_Pension.Interfaces;
+using Process_Pension.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +30,10 @@ namespace Process_Pension
         {
 
             services.AddControllers();
+            services.AddSingleton(typeof(IPensionDetails), new PensionDetails());
+            services.AddSingleton(typeof(IProcessPensionInput), new PensionInputService());
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Process_Pension", Version = "v1" });

@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PensionDisbursement.Interface;
+using PensionDisbursement.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +30,8 @@ namespace PensionDisbursement
         {
 
             services.AddControllers();
+            services.AddSingleton(typeof(IPensionDetails), new PensionDetailService());
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PensionDisbursement", Version = "v1" });

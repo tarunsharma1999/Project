@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PensionerDetail.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +12,20 @@ namespace PensionerDetail.Controllers
     [ApiController]
     public class PensionerDetailController : ControllerBase
     {
-        CSVManager csvManager = new CSVManager();
+        private readonly ICsvManager csvManager;
+        private readonly IUserDetails userDetails;
+
+        public PensionerDetailController(ICsvManager csvManager, IUserDetails userDetails)
+        {
+            this.csvManager = csvManager;
+            this.userDetails = userDetails;
+        }
 
         [HttpGet("{aadharNumber:double}")]
         public ActionResult PensionerDetailByAadhaar(double aadharNumber)
         {
-            var userDetails = csvManager.loadData();
-            PensionerDetailModel validUser=null;
-            foreach (var detail in userDetails)
-            {
-                if(detail.AadharNumber == aadharNumber)
-                {
-                    validUser = detail;
-                }
-            }
+            var csvData = csvManager.loadData();
+            var validUser = userDetails.GetuserDetails(csvData, aadharNumber);
             return Ok(validUser);
             
         }

@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PensionerDetail.Interface;
+using PensionerDetail.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,10 @@ namespace PensionerDetail
         {
 
             services.AddControllers();
+            services.AddSingleton(typeof(ICsvManager), new CsvManager());
+            services.AddSingleton(typeof(IUserDetails), new UserDetails());
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
