@@ -28,3 +28,10 @@ C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\obj\Debug\net5.
 C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\obj\Debug\net5.0\ref\PensionDisbursement.dll
 C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\obj\Debug\net5.0\PensionDisbursement.pdb
 C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\obj\Debug\net5.0\PensionDisbursement.genruntimeconfig.cache
+C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionDisbursement\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

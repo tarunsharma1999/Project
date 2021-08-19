@@ -11,22 +11,33 @@ using System.Threading.Tasks;
 
 namespace Process_Pension.Services
 {
-    public class PensionDetails:IPensionDetails
+    public class PensionDetails : IPensionDetails
     {
-        string Baseurl1 = "https://localhost:44312/";
         PensionDetail pensionDetails;
         ProcessPensionInput pensionInput = null;
-
+        private readonly IHttpClientHelper _client;
+        public PensionDetails(IHttpClientHelper httpClientHelper)
+        {
+            _client = httpClientHelper;
+        }
 
         public async Task<ProcessPensionInput> GetPensionDetails(PensionerInput pensionerDetails)
         {
+            pensionDetails = await _client.GetAsync(pensionerDetails.AadharNumber);
+            CalculatePension(pensionerDetails);
+            return pensionInput;
+        }
+        /*    public async Task<ProcessPensionInput> GetPensionDetails(PensionerInput pensionerDetails)
+        {
             using (var client = new HttpClient())
             {
+                
                 client.BaseAddress = new Uri(Baseurl1);
                 client.DefaultRequestHeaders.Clear();
 
                 
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                // MOQ mocking
                 HttpResponseMessage Res = await client.GetAsync("api/PensionerDetail/" + pensionerDetails.AadharNumber);
 
                 if (Res.IsSuccessStatusCode)
@@ -37,7 +48,7 @@ namespace Process_Pension.Services
             }
             CalculatePension(pensionerDetails);
             return pensionInput;
-        }
+        }*/
         public void CalculatePension(PensionerInput pensionerDetails)
         {
             if (pensionDetails.Name == pensionerDetails.Name && pensionDetails.DateOfBirth == pensionerDetails.DateOfBirth && pensionDetails.PanNo == pensionerDetails.PanNo)

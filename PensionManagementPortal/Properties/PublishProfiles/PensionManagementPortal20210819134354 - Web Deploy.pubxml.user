@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiV/0cGsTckGa7uXZbFPJugAAAAACAAAAAAAQZgAAAAEAACAAAACEHbmHRUsMpCxZoxNbl9CETNYtH5laCziOccH1g1ZGwwAAAAAOgAAAAAIAACAAAACL1sPy4eOjF7OKShajn4O4XT47q0esPy/LyBNCQzGYFYAAAABy6wMau9bCjq/8l6b2EvOIYaq7ZOQreLW+61ahUJ2h3tjz4hxPwfQE5dXxViPw5KSAl0rda1N/le5sTwwX/tv6fqnPcYwfjLao/ap+NJ4sq/2Rprt+AQipubLpR4zAX0Rd3wyi+AFTkjqAqW+9sTpLV8cJ86HiJtb1v41j4VRx50AAAADs86jpZXlv9L7D3X7Yl2kuIq2rwFQY4CBeq5dIT384JWvnyCbiM4mJTB0ulmbvTJ6HNUv3XRKunPoVEy/ZtmLk</EncryptedPassword>
+    <History>True|2021-08-19T09:40:35.3773376Z;True|2021-08-19T13:58:25.2829220+05:30;True|2021-08-19T13:51:49.6018121+05:30;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="default">
+      <Value>Data Source=tcp:pensionmanagementportaldbserver.database.windows.net,1433%3bInitial Catalog=PensionManagementPortal_db%3bUser Id=admin123%40pensionmanagementportaldbserver%3bPassword=Tarun1234%40</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="PensionManagementPortal.AppDbContext">
+      <Value>Data Source=tcp:pensionmanagementportaldbserver.database.windows.net,1433%3bInitial Catalog=PensionManagementPortal_db%3bUser Id=admin123%40pensionmanagementportaldbserver%3bPassword=Tarun1234%40</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

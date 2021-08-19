@@ -10,20 +10,20 @@ namespace PensionerDetail.Services
 {
     public class CsvManager: ICsvManager
     {
-        List<PensionerDetailModel> pernsionerDetails = new List<PensionerDetailModel>();
+        List<PensionerDetailModel> pensionerDetails = new List<PensionerDetailModel>();
 
 
         public List<PensionerDetailModel> loadData()
         {
 
             var csvTable = new DataTable();
-            using (var csvReader = new CsvReader(new StreamReader(System.IO.File.OpenRead(@"..\Pensioner Details.csv")), true))
+            using (var csvReader = new CsvReader(new StreamReader(System.IO.File.OpenRead(@".\Pensioner Details.csv")), true))
             {
                 csvTable.Load(csvReader);
             }
             for (int i = 0; i < csvTable.Rows.Count; i++)
             {
-                pernsionerDetails.Add(new PensionerDetailModel
+                pensionerDetails.Add(new PensionerDetailModel
                 {
                     Name = csvTable.Rows[i][1].ToString().Trim(),
                     DateOfBirth = DateTime.ParseExact(csvTable.Rows[i][2].ToString().Trim(), "dd-MM-yyyy", CultureInfo.InvariantCulture),
@@ -38,7 +38,7 @@ namespace PensionerDetail.Services
 
                 });
             }
-            return pernsionerDetails;
+            return pensionerDetails;
         }
     }
 }

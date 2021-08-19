@@ -12,24 +12,21 @@ using System.Threading.Tasks;
 
 namespace Process_Pension.Services
 {
-    public class PensionInputService:IProcessPensionInput
+    public class PensionInputService : IProcessPensionInput
     {
-        string Baseurl2 = "https://localhost:44376/";
+        private readonly IHttpClientHelper _client;
+
+        public PensionInputService(IHttpClientHelper httpClientHelper)
+        {
+            _client = httpClientHelper;
+        }
 
         public async Task<int> ProcessPensionInput(ProcessPensionInput pensionInput)
         {
             var json = JsonConvert.SerializeObject(pensionInput);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(Baseurl2);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage Res = await client.PostAsync("api/PensionDisbursement/", data);
-
-               return ((int)Res.StatusCode);
-                
-            }
+            var Res = await _client.PostAsync("api/PensionDisbursement/", data);
+            return ((int)Res.StatusCode);
         }
     }
 }

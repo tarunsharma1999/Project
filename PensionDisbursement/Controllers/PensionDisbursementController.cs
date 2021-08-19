@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PensionDisbursement.Interface;
@@ -14,6 +15,7 @@ namespace PensionDisbursement.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PensionDisbursementController : ControllerBase
     {
         private readonly IPensionDetails pensionDetails;
@@ -30,7 +32,7 @@ namespace PensionDisbursement.Controllers
         {
             var result = await pensionDetails.GetPensionDetails(processPensionInput);
             
-            return result ? new StatusCodeResult(10) : new StatusCodeResult(21);
+            return result ? new StatusCodeResult(10) : new StatusCodeResult(21); 
         }
        
     }

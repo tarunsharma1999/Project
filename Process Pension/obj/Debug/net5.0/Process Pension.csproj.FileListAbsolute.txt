@@ -58,3 +58,15 @@ C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\obj\Debug\net5.0\Pr
 C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\obj\Debug\net5.0\ref\Process Pension.dll
 C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\obj\Debug\net5.0\Process Pension.pdb
 C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\obj\Debug\net5.0\Process Pension.genruntimeconfig.cache
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\packages\Microsoft.CodeCoverage.16.11.0\build\netstandard1.0\CodeCoverage\amd64\VanguardInstrumentationProfiler_x64.config
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\packages\Microsoft.CodeCoverage.16.11.0\build\netstandard1.0\CodeCoverage\CodeCoverage.config
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\packages\Microsoft.CodeCoverage.16.11.0\build\netstandard1.0\CodeCoverage\VanguardInstrumentationProfiler_x86.config
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\packages\Microsoft.CodeCoverage.16.11.0\build\netstandard1.0\InstrumentationEngine\alpine\x64\ProductionBreakpoints_x64.config
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\packages\Microsoft.CodeCoverage.16.11.0\build\netstandard1.0\InstrumentationEngine\ubuntu\x64\ProductionBreakpoints_x64.config
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Tarun\Desktop\Cogni\Project\Project\Process Pension\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

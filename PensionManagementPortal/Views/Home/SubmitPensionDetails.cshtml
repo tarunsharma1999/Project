@@ -1,0 +1,47 @@
+﻿@model PensionInput
+@{ 
+    ViewBag.Title = "Submit Pension Details";
+}
+
+<h2> Submit Pension Details </h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SubmitPensionDetails">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PanNo" class="control-label"></label>
+                <input asp-for="PanNo" class="form-control" />
+                <span asp-validation-for="PanNo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AadharNumber" class="control-label"></label>
+                <input asp-for="AadharNumber" class="form-control" />
+                <span asp-validation-for="AadharNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BankAccountType" class="control-label"></label>
+                <input asp-for="BankAccountType" class="form-control" />
+                <span asp-validation-for="BankAccountType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+        </div>
+    </div>

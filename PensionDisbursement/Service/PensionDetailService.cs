@@ -14,28 +14,21 @@ namespace PensionDisbursement.Service
     {
         string Baseurl1 = "https://localhost:44312/";
         PensionDetail pensionDetails = null;
+        private readonly IHttpClientHelper client;
+
+        public PensionDetailService(IHttpClientHelper client)
+        {
+            this.client = client;
+        }
         public double PensionAmount { get; set; }
 
-        public double BankCharges { get; set; }
+        public double BankCharges { get; set; } 
 
 
         public async Task<bool> GetPensionDetails(ProcessPensionInput pensionerDetails)
         {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(Baseurl1);
-                client.DefaultRequestHeaders.Clear();
-
-
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage Res = await client.GetAsync("api/PensionerDetail/" + pensionerDetails.AadharNumber);
-
-                if (Res.IsSuccessStatusCode)
-                {
-                    var Response = Res.Content.ReadAsStringAsync().Result;
-                    pensionDetails = JsonConvert.DeserializeObject<PensionDetail>(Response);
-                }
-            }
+            pensionDetails = await client.GetAsync(pensionerDetails.AadharNumber);
+            
             if(pensionDetails == null)
             {
                 return false;

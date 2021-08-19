@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -6,12 +7,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Process_Pension.Interfaces;
 using Process_Pension.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Process_Pension
@@ -28,10 +31,44 @@ namespace Process_Pension
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region JWT Authorization 
+            string securityKey = "mysuperdupersecret";
+
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, x =>
+                    {
+                        x.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            //what to validate
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+                            ValidateLifetime = true,
+                            ValidateIssuerSigningKey = true,
+
+                            //setup validate data
+                            ValidIssuer = "mySystem",
+                            ValidAudience = "myUsers",
+                            IssuerSigningKey = symmetricSecurityKey
+                        };
+                    });
+            #endregion
+
+
 
             services.AddControllers();
-            services.AddSingleton(typeof(IPensionDetails), new PensionDetails());
-            services.AddSingleton(typeof(IProcessPensionInput), new PensionInputService());
+            services.AddScoped<IPensionDetails, PensionDetails>();
+            services.AddScoped<IProcessPensionInput, PensionInputService>();
+            services.AddScoped<IHttpClientHelper, HttpClientHelper>();
+            //services.AddScoped<IJWT, GetJWT>();
+
+
 
 
             services.AddSwaggerGen(c =>
@@ -53,7 +90,7 @@ namespace Process_Pension
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
