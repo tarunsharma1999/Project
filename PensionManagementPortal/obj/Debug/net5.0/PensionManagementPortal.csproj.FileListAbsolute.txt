@@ -219,4 +219,3 @@ C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionManagementPortal\obj\Debug\n
 C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionManagementPortal\obj\Debug\net5.0\Razor\Views\Home\ShowPensionDetails.cshtml.g.cs
 C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionManagementPortal\obj\Debug\net5.0\Razor\Views\Home\ChangePassword.cshtml.g.cs
 C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionManagementPortal\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionManagementPortal\obj\Debug\net5.0\PensionManagementPortal.csproj.AssemblyReference.cache

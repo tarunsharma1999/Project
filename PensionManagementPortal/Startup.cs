@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using PensionManagementPortal.Interfaces;
 using PensionManagementPortal.Services;
+using PensionManagementPortal.DatabaseRepo;
 
 namespace PensionManagementPortal
 {
@@ -33,12 +34,18 @@ namespace PensionManagementPortal
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("default")));
+
+            services.AddDbContext<DbHelper>(options =>
+                options.UseSqlServer(
+                        Configuration.GetConnectionString("default2")));
             //services.AddSingleton(typeof(IUserRegistration), new UserRegistrationService(UserManager<IdentityUser>) );
             //services.AddSingleton(typeof(IUserLogin), new UserLoginService());
 
             services.AddScoped<IUserRegistration, UserRegistrationService>();
             services.AddScoped<IUserLogin, UserLoginService>();
             services.AddScoped<IClientHelper, ClientHelperService>();
+            services.AddScoped<IDb,DbService>();
+
 
 
 

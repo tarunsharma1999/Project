@@ -1,11 +1,25 @@
 {
   "dependencies": {
+    "mssql2": {
+      "restored": true,
+      "restoreTime": "2021-08-19T20:27:40.5163418Z"
+    },
     "mssql1": {
       "restored": true,
       "restoreTime": "2021-08-19T08:15:55.3627071Z"
     }
   },
   "parameters": {
+    "mssql2.subscriptionId": {
+      "Name": "mssql2.subscriptionId",
+      "Type": "subscription",
+      "Value": "ad88e50f-9f14-44ac-8b4c-a846e18d2740"
+    },
+    "mssql2.resourceGroupName": {
+      "Name": "mssql2.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "DefaultResourceGroup-SCUS"
+    },
     "mssql1.subscriptionId": {
       "Name": "mssql1.subscriptionId",
       "Type": "subscription",

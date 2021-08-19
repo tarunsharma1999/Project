@@ -3,32 +3,41 @@
     ViewBag.Title = "Show Pension Details";
 }
 
+
 @if (Model == null)
 {
     <h5> Invalid User Details, Please Provide Verified Detail !!! </h5>
 }
 else
 {
-<form>
+<form asp-action="ShowPensionDetails">
     <div class="form-group row">
-        <label for="@Model.AadharNumber" class="col-sm-2 col-form-label">Email</label>
+        <label for="@Model.AadharNumber" class="col-sm-2 col-form-label">Aadhar Number:</label>
         <div class="col-sm-10">
             <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.AadharNumber">
         </div>
     </div>
     <div class="form-group row">
-        <label for="@Model.PensionAmount" class="col-sm-2 col-form-label">Email</label>
+        <label for="@Model.PensionAmount" class="col-sm-2 col-form-label">Pension Amount:</label>
         <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.PensionAmount">
+            <input type="text" readonly class="form-control-plaintext" value="@Model.PensionAmount">
         </div>
     </div>
     <div class="form-group row">
-        <label for="@Model.BankCharges" class="col-sm-2 col-form-label">Email</label>
+        <label for="@Model.BankCharges" class="col-sm-2 col-form-label">Bank Charges: </label>
         <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.BankCharges">
+            <input type="text" readonly class="form-control-plaintext" value="@Model.BankCharges">
         </div>
     </div>
-
+    <div class="form-group">
+        <input type="submit" value="Withdraw" class="btn btn-primary" />
+    </div> 
+    @if(ViewBag.DateOfWithdrawn!=null)
+    {
+        <p> Pension Already Withdrawn on :  @ViewBag.DateOfWithdrawn</p>
+    }
+    
 </form>
  
 }
+

@@ -6,4 +6,7 @@
   <parameter name="PensionManagementPortal.AppDbContext" description="" value="Data Source=tcp:pensionmanagementportaldbserver.database.windows.net,1433;Initial Catalog=PensionManagementPortal_db;User Id=admin123@pensionmanagementportaldbserver;Password=Tarun1234@" tags="dbfullsql">
     <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Project\\PensionManagementPortal\\obj\\Release\\net5\.0\\PubTmp\\EFSQLScripts\\PensionManagementPortal\.AppDbContext\.sql$" />
   </parameter>
+  <parameter name="PensionManagementPortal.DatabaseRepo.DbHelper" description="" value="Data Source=tcp:pensionmanagementportaldbserver.database.windows.net,1433;Initial Catalog=PensionManagementPortal_db;User Id=admin123@pensionmanagementportaldbserver;Password=Tarun1234@" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Tarun\\Desktop\\Cogni\\Project\\Project\\PensionManagementPortal\\obj\\Release\\net5\.0\\PubTmp\\EFSQLScripts\\PensionManagementPortal\.DatabaseRepo\.DbHelper\.sql$" />
+  </parameter>
 </parameters>

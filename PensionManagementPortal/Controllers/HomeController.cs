@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PensionManagementPortal.DatabaseRepo;
 using PensionManagementPortal.Interfaces;
 using PensionManagementPortal.Models;
 using System;
@@ -16,15 +17,19 @@ namespace PensionManagementPortal.Controllers
         private readonly IUserRegistration userRegistration;
         private readonly IUserLogin userLogin;
         private readonly IClientHelper client;
+        private readonly IDb db;
         static PensionData pensionData = new PensionData();
+        static PensionInput userData = new PensionInput();
 
         public HomeController(IUserRegistration userRegistration,
                                 IUserLogin userLogin,
-                                IClientHelper client)
+                                IClientHelper client,
+                                IDb db)
         {
             this.userRegistration = userRegistration;
             this.userLogin = userLogin;
             this.client = client;
+            this.db = db;
         }
 
         public IActionResult Index()
@@ -132,6 +137,7 @@ namespace PensionManagementPortal.Controllers
             {
                 var result = client.SubmitPensionInput(pensionDetails);
                 pensionData = result.Result;
+                userData = pensionDetails;
                 return RedirectToAction("ShowPensionDetails");
 
             }
@@ -142,6 +148,33 @@ namespace PensionManagementPortal.Controllers
 
         public ActionResult ShowPensionDetails()
         {
+            return View(pensionData);
+        }
+        [Authorize]
+        [Route("ShowPensionDetails")]
+        [HttpPost]
+        public ActionResult ShowPensionDetails(PensionData Data)
+        {
+            var i = 4;
+            if(ModelState.IsValid)
+            {
+                if(!db.CheckPensionWithdrawn(userData.AadharNumber))
+                {
+                    userData = db.AddUserDetails(userData);
+                    //pensionData.Id = userData.Id;
+                    pensionData.DateOFWithdraw = DateTime.Now;
+                    db.AddPensionDetails(pensionData);
+                    ViewBag.withdraw = true;
+                    return View(pensionData);
+                }
+                else
+                {
+                    ViewBag.DateOfWithdrawn = db.DateWithdrawn(userData.AadharNumber);
+                    return View(pensionData);
+                }
+
+                
+            }
             return View(pensionData);
         }
     }

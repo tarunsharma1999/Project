@@ -2,4 +2,5 @@
 <sitemanifest>
   <IisApp path="C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionManagementPortal\obj\Release\net5.0\PubTmp\Out\" />
   <dbfullsql path="C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionManagementPortal\obj\Release\net5.0\PubTmp\EFSQLScripts\PensionManagementPortal.AppDbContext.sql" />
+  <dbfullsql path="C:\Users\Tarun\Desktop\Cogni\Project\Project\PensionManagementPortal\obj\Release\net5.0\PubTmp\EFSQLScripts\PensionManagementPortal.DatabaseRepo.DbHelper.sql" />
 </sitemanifest>
